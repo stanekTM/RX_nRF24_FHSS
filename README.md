@@ -1,8 +1,8 @@
 # RC receiver with FHSS
-Universal RC receiver with frequency hopping **(FHSS)** and two-way telemetry **(Auto-ACK Payload)**, built on the Arduino platform.
+Universal RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payload), built on the Arduino platform.
 
 ## Features and functions
-* **FHSS** Rapid hopping between 4 strong RF channels **(12, 40, 76, 88)** outside the main WiFi frequencies
+* **FHSS** Rapid hopping between 4 strong RF channels (12, 40, 76, 88) outside the main WiFi frequencies
 * **Transmission rate** 1 Mbps (for full support of the newer nRF52 generation)
 * **Constant latency / period** 4.5 ms (222 Hz)
 * **Fail-Safe**
