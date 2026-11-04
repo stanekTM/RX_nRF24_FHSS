@@ -1,4 +1,4 @@
-# RC receiver with FHSS
+# FHSS RC receiver with telemetry
 Universal RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payload), built on the Arduino platform
 
 ## Features and functions
@@ -69,7 +69,7 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <table border="0">
 <tr>
 <td width="50%">
-<a href="https://youtu.be/E0pgMNPuYU4"><img src="documents/micro_rx_youtube.PNG" alt="micro_rx_youtube.PNG" width="100%"></a>
+<a href="https://youtu.be/E0pgMNPuYU4"><img src="documents/micro_rx_youtube.png" alt="micro_rx_youtube.png" width="100%"></a>
 </td>
 </tr>
 </table>
@@ -77,10 +77,10 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <table border="0">
 <tr>
 <td width="50%">
-<img src="documents/1micro_rx_schema.png" alt="1micro_rx_schema" width="100%">
+<img src="documents/1micro_rx_schema.png" alt="1micro_rx_schema.png" width="100%">
 </td>
 <td width="50%">
-<img src="documents/2micro_rx_layout.png" alt="2micro_rx_layout" width="100%">
+<img src="documents/2micro_rx_layout.png" alt="2micro_rx_layout.png" width="100%">
 </td>
 </tr>
 </table>
@@ -88,10 +88,10 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <table border="0">
 <tr>
 <td width="50%">
-<img src="documents/3micro_rx_top.jpg" alt="3micro_rx_top" width="100%">
+<img src="documents/3micro_rx_top.jpg" alt="3micro_rx_top.jpg" width="100%">
 </td>
 <td width="50%">
-<img src="documents/4micro_rx_bottom.jpg" alt="4micro_rx_bottom" width="100%">
+<img src="documents/4micro_rx_bottom.jpg" alt="4micro_rx_bottom.jpg" width="100%">
 </td>
 </tr>
 </table>
@@ -101,7 +101,7 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <table border="0">
 <tr>
 <td width="50%">
-<a href="https://youtu.be/AYgY5UkVnUM"><img src="documents/rx_mix_tank_arcade_youtube.PNG" alt="rx_mix_tank_arcade_youtube" width="100%"></a>
+<a href="https://youtu.be/AYgY5UkVnUM"><img src="documents/rx_mix_tank_arcade_youtube.PNG" alt="rx_mix_tank_arcade_youtube.PNG" width="100%"></a>
 </td>
 </tr>
 </table>
@@ -111,7 +111,7 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <table border="0">
 <tr>
 <td width="50%">
-<a href="https://youtu.be/jPN5YdQ-3K0"><img src="documents/rx_servo_motor_youtube.PNG" alt="rx_servo_motor_youtube" width="100%"></a>
+<a href="https://youtu.be/jPN5YdQ-3K0"><img src="documents/rx_servo_motor_youtube.PNG" alt="rx_servo_motor_youtube.PNG" width="100%"></a>
 </td>
 </tr>
 </table>
