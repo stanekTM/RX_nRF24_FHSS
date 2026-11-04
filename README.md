@@ -69,7 +69,7 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <table border="0">
 <tr>
 <td width="50%">
-<a href="https://youtu.be/E0pgMNPuYU4"><img src="documents/micro_rx_youtube.png" alt="micro_rx_youtube" width="100%"></a>
+<a href="https://youtu.be/E0pgMNPuYU4"><img src="documents/micro_rx_youtube.png" alt="micro_rx_youtube.png" width="100%"></a>
 </td>
 </tr>
 </table>
