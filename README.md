@@ -1,5 +1,5 @@
 # RC receiver with FHSS
-Universal RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payload), built on the Arduino platform.
+Universal RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payload), built on the Arduino platform
 
 ## Features and functions
 * **FHSS** Rapid hopping between 4 strong RF channels (12, 40, 76, 88) outside the main WiFi frequencies
@@ -35,7 +35,7 @@ Universal RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-
 
 ## Receiver configuration description
 Examples in the [**Config.h**](RX_nRF24_FHSS/Config.h) file
-```cpp
+```
 #define PIN_LED        2  // Define a pin other than A5
 #define PIN_BATTERY_A1 A7 // Define an analog pin other than A6 (only A5 or A7 available)
 #define PIN_BATTERY_A2 A6 // Define an analog pin other than A7 (only A5 or A6 available)
@@ -61,15 +61,6 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 #define MAX_FWD_MOTOR_T2 100 // Maximum permitted power for the forward direction
 #define MAX_REV_MOTOR_T2 50  // Maximum permitted power for the reverse direction (e.g., safer reversing)
 #define BRAKE_MOTOR_T2   0   // Braking force during stopping (0 = idling, 100 = maximum brake)
-```
-
-## Požadavky na knihovny
-```cpp
-#include <RF24.h>      // nRF24L01+ wireless chip driver (v1.4.11)
-#include <DigitalIO.h> // Library for fast software SPI and pin manipulation
-#include <Servo.h>     // Standard Arduino library for generating RC pulses
-#include <EEPROM.h>    // Standard Arduino library for reading from and writing to permanent EEPROM memory
-#include <avr/wdt.h>   // Library for controlling the Watchdog timer
 ```
 
 ## Photo gallery and video samples
