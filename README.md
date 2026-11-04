@@ -101,7 +101,7 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <table border="0">
 <tr>
 <td width="50%">
-<a href="https://youtu.be/AYgY5UkVnUM"><img src="documents/rx_mix_tank_arcade_youtube.PNG" alt="rx_mix_tank_arcade_youtube.PNG" width="100%"></a>
+<a href="https://youtu.be/AYgY5UkVnUM"><img src="documents/rx_mix_tank_arcade_youtube.png" alt="rx_mix_tank_arcade_youtube.png" width="100%"></a>
 </td>
 </tr>
 </table>
@@ -111,7 +111,7 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <table border="0">
 <tr>
 <td width="50%">
-<a href="https://youtu.be/jPN5YdQ-3K0"><img src="documents/rx_servo_motor_youtube.PNG" alt="rx_servo_motor_youtube.PNG" width="100%"></a>
+<a href="https://youtu.be/jPN5YdQ-3K0"><img src="documents/rx_servo_motor_youtube.png" alt="rx_servo_motor_youtube.png" width="100%"></a>
 </td>
 </tr>
 </table>
