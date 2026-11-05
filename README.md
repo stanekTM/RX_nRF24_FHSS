@@ -34,7 +34,7 @@ RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payloa
 * [**TX_nRF24_FHSS_Xch_LED**](https://github.com/stanekTM/TX_nRF24_FHSS_Xch_LED)
 
 ## Receiver configuration description
-Examples in the [**Config.h**](RX_nRF24_FHSS/Config.h) file.
+Examples in the [**Config.h**](RX_nRF24_FHSS/Config.h) file
 ```cpp
 #define PIN_LED        2  // Define a pin other than A5
 #define PIN_BATTERY_A1 A7 // Define an analog pin other than A6 (only A5 or A7 available)
