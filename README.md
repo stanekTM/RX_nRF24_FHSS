@@ -10,7 +10,7 @@ RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payloa
   * In the event of a signal loss exceeding 1000 ms, the receiver sets all servos to failsafe positions and the motors to a fixed neutral setting (1500 us, idling / brake).
 * **RC channels** from 2 to 14 with 16-bit pulse resolution (1000–2000 us).
   * Up to 14 PWM servo outputs (ATmega328PB only).
-  * 2 independent motor outputs, or a combination of 1 to 2 motor outputs with servo outputs.
+  * 2 separate motor outputs, combination of 1 to 2 motor outputs with servo outputs or separate servo outputs.
 * **Telemetry**
   * 2 analog inputs with 8-bit resolution (0–255).
   * RSSI counting successfully delivered packets with 8-bit resolution limited to (0–100).
