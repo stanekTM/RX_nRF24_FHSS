@@ -1,4 +1,4 @@
-# RC receiver with FHSS and telemetry for motors and servos
+# RC receiver for motors and servos
 RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payload), built on the Arduino platform
 
 ## Features and functions
