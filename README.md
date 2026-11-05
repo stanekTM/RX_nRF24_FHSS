@@ -1,31 +1,31 @@
 # RC receiver for motors and servos
-RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payload), built on the Arduino platform
+RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payload), built on the Arduino platform.
 
 ## Features and functions
-* **FHSS** Rapid hopping between 4 strong RF channels (12, 40, 76, 88) outside the main WiFi frequencies
-* **Transmission rate** 1 Mbps (for full support of the newer nRF52 generation)
-* **Constant latency / period** 4.5 ms (222 Hz)
+* **FHSS** Rapid hopping between 4 strong RF channels (12, 40, 76, 88) outside the main WiFi frequencies.
+* **Transmission rate** 1 Mbps (for full support of the newer nRF52 generation).
+* **Constant latency / period** 4.5 ms (222 Hz).
 * **Fail-Safe**
-  * Saving servo emergency positions to EEPROM memory (triggered from the transmitter)
-  * In the event of a signal loss exceeding 1000 ms, the receiver sets all servos to failsafe positions and the motors to a fixed neutral setting (1500 us, idling / brake)
-* **RC channels** from 2 to 14 with 16-bit pulse resolution (1000–2000 us)
-  * Up to 14 PWM servo outputs (ATmega328PB only)
-  * 2 independent motor outputs, or a combination of 1 to 2 motor outputs with servo outputs
+  * Saving servo emergency positions to EEPROM memory (triggered from the transmitter).
+  * In the event of a signal loss exceeding 1000 ms, the receiver sets all servos to failsafe positions and the motors to a fixed neutral setting (1500 us, idling / brake).
+* **RC channels** from 2 to 14 with 16-bit pulse resolution (1000–2000 us).
+  * Up to 14 PWM servo outputs (ATmega328PB only).
+  * 2 independent motor outputs, or a combination of 1 to 2 motor outputs with servo outputs.
 * **Telemetry**
-  * 2 analog inputs with 8-bit resolution (0–255)
-  * RSSI counting successfully delivered packets with 8-bit resolution limited to (0–100)
+  * 2 analog inputs with 8-bit resolution (0–255).
+  * RSSI counting successfully delivered packets with 8-bit resolution limited to (0–100).
 * **Status LED mode**
-  * Permanently lights: Normal operation, the signal is fine, and the batteries are charged
-  * Rapid flashing (100 ms): Fail-Safe activated (signal loss lasts longer than 1000 ms)
-  * Medium flashing (300 ms): Low battery voltage A1 or A2
-  * Slow flashing (500 ms): Saving emergency servo positions to EEPROM memory is in progress
+  * Permanently lights: Normal operation, the signal is fine, and the batteries are charged.
+  * Rapid flashing (100 ms): Fail-Safe activated (signal loss lasts longer than 1000 ms).
+  * Medium flashing (300 ms): Low battery voltage A1 or A2.
+  * Slow flashing (500 ms): Saving emergency servo positions to EEPROM memory is in progress.
 
 ## Supported hardware
-* Transceiver Nordic Semiconductor nRF24L01+
-* AVR ATmega328P microcontroller or the more advanced ATmega328PB
-* You can use any motor driver that utilizes 2 PWM control inputs for forward and reverse operation e.g. Mixic for two motors (MX1208, MX1508, MX1515, MX1616, MX1919,...) or one engine (MX116, MX608, MX512, MX612,...)
-  * Note: The code is not suitable for motor drivers that use 1 PWM signal and 2 logic inputs for forward and reverse direction per motor e.g. Toshiba Semiconductor TB6612FNG (it unnecessarily uses 2 extra pins to control two motors!) 
-* Supplementary hardware: For some PCBs added transponder for wheel measurement CMOSTEK CMT2150A
+* Transceiver Nordic Semiconductor nRF24L01+.
+* AVR ATmega328P microcontroller or the more advanced ATmega328PB.
+* You can use any motor driver that utilizes 2 PWM control inputs for forward and reverse operation e.g. Mixic for two motors (MX1208, MX1508, MX1515, MX1616, MX1919,...) or one engine (MX116, MX608, MX512, MX612,...).
+  * Note: The code is not suitable for motor drivers that use 1 PWM signal and 2 logic inputs for forward and reverse direction per motor e.g. Toshiba Semiconductor TB6612FNG (it unnecessarily uses 2 extra pins to control two motors!).
+* Supplementary hardware: For some PCBs added transponder for wheel measurement CMOSTEK CMT2150A.
 
 ## Compatible with RC transmitters
 * [**OpenAVRc**](https://github.com/Ingwie/OpenAVRc_Dev)
@@ -34,7 +34,7 @@ RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payloa
 * [**TX_nRF24_FHSS_Xch_LED**](https://github.com/stanekTM/TX_nRF24_FHSS_Xch_LED)
 
 ## Receiver configuration description
-Examples in the [**Config.h**](RX_nRF24_FHSS/Config.h) file
+Examples in the [**Config.h**](RX_nRF24_FHSS/Config.h) file.
 ```cpp
 #define PIN_LED        2  // Define a pin other than A5
 #define PIN_BATTERY_A1 A7 // Define an analog pin other than A6 (only A5 or A7 available)
