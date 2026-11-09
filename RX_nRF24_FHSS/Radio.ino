@@ -30,12 +30,6 @@ void manage_rf_link()
   // SCÉNÁŘ A: Data v pořádku dorazila
   if (radio.available())
   {
-    // Pokud je paket poškozený (velikost menší než 1), knihovna ho automaticky spláchne (flush)
-    if (radio.getDynamicPayloadSize() < 1) return; // Poškozená datová část byla odstraněna
-    
-    // Nyní máme jistotu, že data jsou čistá a můžeme je bezpečně přečíst
-    //radio.read(&rx_data, sizeof(rx_data));
-    
     // Stahujeme ze vzduchu přesnou reálnou délku paketu (data se do struktury rx_data uloží bez posunu)
     radio.read(&rx_data, radio.getDynamicPayloadSize());
     
