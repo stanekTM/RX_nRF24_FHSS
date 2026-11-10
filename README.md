@@ -29,7 +29,7 @@ RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payloa
 
 ## Compatible with RC transmitters
 * [**OpenAVRc**](https://github.com/Ingwie/OpenAVRc_Dev)
-* [**DIY-Multiprotocol-TX-Module (EdgeTX/OpenTX)**](https://github.com/stanekTM/TX_Multiprotocol_Stanek) from my fork
+* [**DIY-Multiprotocol-TX-Module (EdgeTX / OpenTX)**](https://github.com/stanekTM/Custom_Protocol-Multiprotocol_TX) from my fork
 * [**TX_nRF24_FHSS_2ch_OLED**](https://github.com/stanekTM/TX_nRF24_FHSS_2ch_OLED)
 * [**TX_nRF24_FHSS_Xch_LED**](https://github.com/stanekTM/TX_nRF24_FHSS_Xch_LED)
 
