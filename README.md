@@ -76,6 +76,11 @@ const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
 <tr>
 <td><img src="documents/1micro_rx_schema.png"></td>
 <td><img src="documents/2micro_rx_layout.png"></td>
+</tr>
+</table>
+
+<table border="0">
+<tr>
 <td><img src="documents/3micro_rx_top.jpg"></td>
 <td><img src="documents/4micro_rx_bottom.jpg"></td>
 </tr>
