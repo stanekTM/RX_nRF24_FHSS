@@ -12,9 +12,9 @@ void read_batt()
     tx_telemetry_data.batt_A1 = analogRead(PIN_BATTERY_A1) >> 2; // Převede 10-bit ADC rozsah (0 až 1023) na 8-bit rozsah telemetrie (0 až 255)
     
     // Pokud napětí A1 klesne, nebo byl alarm aktivní už dříve, uzamkneme stav vybité baterie
-    if ((tx_telemetry_data.batt_A1 <= (255.0 / BATT_VOLTAGE_A1) * MONITORED_VOLTAGE_A1) || low_batt_alarm_flag_A1)
+    if ((tx_telemetry_data.batt_A1 <= (255.0 / BATT_VOLTAGE_A1) * MONITORED_VOLTAGE_A1) || low_batt_flag_A1)
     {
-      low_batt_alarm_flag_A1 = true;
+      low_batt_flag_A1 = true;
     }
     
     // Měření baterie A2
@@ -22,9 +22,9 @@ void read_batt()
       tx_telemetry_data.batt_A2 = analogRead(PIN_BATTERY_A2) >> 2; // Převede 10-bit ADC rozsah (0 až 1023) na 8-bit rozsah telemetrie (0 až 255)
       
       // Pokud napětí A2 klesne, nebo byl alarm aktivní už dříve, uzamkneme stav vybité baterie
-      if ((tx_telemetry_data.batt_A2 <= (255.0 / BATT_VOLTAGE_A2) * MONITORED_VOLTAGE_A2) || low_batt_alarm_flag_A2)
+      if ((tx_telemetry_data.batt_A2 <= (255.0 / BATT_VOLTAGE_A2) * MONITORED_VOLTAGE_A2) || low_batt_flag_A2)
       {
-        low_batt_alarm_flag_A2 = true;
+        low_batt_flag_A2 = true;
       }
     #endif
   }

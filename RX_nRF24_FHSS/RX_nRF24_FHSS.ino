@@ -61,8 +61,8 @@ uint8_t packet_counter = 0; // Počítadlo úspěšně přijatých paketů
 
 // Měření baterií
 uint32_t batt_timer = 0; // Časovač měření baterií
-bool low_batt_alarm_flag_A1 = false; // Příznak vybití baterie A1
-bool low_batt_alarm_flag_A2 = false; // Příznak vybití baterie A2
+bool low_batt_flag_A1 = false; // Příznak vybití baterie A1
+bool low_batt_flag_A2 = false; // Příznak vybití baterie A2
 
 // Permanentní paměť EEPROM
 uint16_t eeprom_fail_safe_data[NUM_SERVOS]; // Pole pro uložení / načtení nouzových poloh serv

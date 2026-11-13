@@ -9,6 +9,7 @@ void radio_init()
   
   radio.setAutoAck(true); // Zapnutí automatického hardwarového potvrzování příjmu paketů
   radio.setPayloadSize(sizeof(rx_data)); // Nastavuje základní / maximální délku vaší letové struktury
+  
   radio.enableDynamicPayloads(); // Povolení automatického přizpůsobení délky paketů
   radio.enableAckPayload(); // Zapnutí funkce přibalování telemetrie do potvrzovacích ACK paketů
   
@@ -80,12 +81,11 @@ void manage_rf_link()
     blink(PIN_LED, 100); // Krizový stav: LED bliká rychle (0.1 s)
   }
   // Vybitá baterie A1 nebo A2: LED bliká (0.3 s)
-  else if (low_batt_alarm_flag_A1 || low_batt_alarm_flag_A2) blink(PIN_LED, 300);
-  
+  else if (low_batt_flag_A1 || low_batt_flag_A2) blink(PIN_LED, 300);
   // Ukládání Fail-Safe: LED bliká (0.5 s)
   else if (rx_data.fail_safe_flag == 1) blink(PIN_LED, 500);
-  
-  else digitalWrite(PIN_LED, HIGH); // Normální provoz: LED trvale svítí
+  // Normální provoz: LED trvale svítí
+  else digitalWrite(PIN_LED, HIGH);
 }
 
 //*****************************
