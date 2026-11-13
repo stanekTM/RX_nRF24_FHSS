@@ -20,7 +20,7 @@ Receiver configuration description (see examples below)
 #define MONITORED_VOLTAGE_A2  6.9  Set minimum alarm voltage for battery A2
 
 #define SERVO                              Define servo outputs (up to 14 servos, ATmega328PB only)
-const uint8_t pins_servo[] = {2, 3, ...};  Select pins for servos
+const uint8_t servo_pins[] = {2, 3, ...};  Select pins for servos
 
 #define MIX_TANK  Option to add a Tank / Arcade mix for two motors
 
@@ -51,7 +51,7 @@ Setting motor limits in % (0 to 100)
   #define BATT_VOLTAGE_A1  4.2
   #define MONITORED_VOLTAGE_A1  3.45
   #define SERVO
-  const uint8_t pins_servo[] = {2, 3, 4, 5};
+  const uint8_t servo_pins[] = {2, 3, 4, 5};
 #endif
 
 //*********************************
@@ -63,7 +63,7 @@ Setting motor limits in % (0 to 100)
   #define BATT_VOLTAGE_A1  4.2
   #define MONITORED_VOLTAGE_A1  3.45
   #define SERVO
-  const uint8_t pins_servo[] = {9}; // Except for pins 3, 11
+  const uint8_t servo_pins[] = {9}; // Except for pins 3, 11
   #define NUM_MOTORS  1
   
   #define MOTOR_T2
@@ -138,7 +138,7 @@ Setting motor limits in % (0 to 100)
   #define BATT_VOLTAGE_A1  4.2
   #define MONITORED_VOLTAGE_A1  3.45
   #define SERVO
-  const uint8_t pins_servo[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+  const uint8_t servo_pins[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 #endif
 
 //*****************************
@@ -172,7 +172,7 @@ Setting motor limits in % (0 to 100)
   #define BATT_VOLTAGE_A1  4.2
   #define MONITORED_VOLTAGE_A1  3.45
   #define SERVO
-  const uint8_t pins_servo[] = {0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 12, 13}; // Except for pins 3, 11
+  const uint8_t servo_pins[] = {0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 12, 13}; // Except for pins 3, 11
   #define NUM_MOTORS  1
   
   #define MOTOR_T2
@@ -198,7 +198,7 @@ Setting motor limits in % (0 to 100)
   #define BATT_VOLTAGE_A1  4.2
   #define MONITORED_VOLTAGE_A1  3.45
   #define SERVO
-  const uint8_t pins_servo[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+  const uint8_t servo_pins[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 #endif
 
 //*****************************
@@ -256,7 +256,7 @@ Setting motor limits in % (0 to 100)
   #define BATT_VOLTAGE_A1  4.2
   #define MONITORED_VOLTAGE_A1  3.45
   #define SERVO
-  const uint8_t pins_servo[] = {0, 4, 5, 6, 7, 8, 9, 10, 12, 13}; // Except for pins 1, 2, 3, 11
+  const uint8_t servo_pins[] = {0, 4, 5, 6, 7, 8, 9, 10, 12, 13}; // Except for pins 1, 2, 3, 11
   //#define MIX_TANK
   #define NUM_MOTORS  2
   
@@ -286,7 +286,7 @@ Setting motor limits in % (0 to 100)
   const uint8_t NUM_SERVOS = 0;
 // Pokud potřebujeme serva, spočítáme je z pole a vytvoříme objekty
 #else
-  const uint8_t NUM_SERVOS = sizeof(pins_servo);
+  const uint8_t NUM_SERVOS = sizeof(servo_pins);
   Servo servo[NUM_SERVOS];
 #endif
 

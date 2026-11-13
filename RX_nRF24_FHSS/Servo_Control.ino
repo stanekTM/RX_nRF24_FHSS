@@ -6,7 +6,7 @@ void servo_init()
   #if defined(SERVO)
     for (uint8_t i = 0; i < NUM_SERVOS; i++)
     {
-      servo[i].attach(pins_servo[i]);
+      servo[i].attach(servo_pins[i]);
       servo[i].writeMicroseconds(eeprom_fail_safe_data[i]);
     }
   #endif

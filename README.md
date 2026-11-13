@@ -48,7 +48,7 @@ Examples in the [**Config.h**](RX_nRF24_FHSS/Config.h) file
 #define MONITORED_VOLTAGE_A2 6.9 // Set minimum alarm voltage for battery A2
 
 #define SERVO                             // Define servo outputs (up to 14 servos, ATmega328PB only)
-const uint8_t pins_servo[] = {2, 3, ...}; // Select pins for servos
+const uint8_t servo_pins[] = {2, 3, ...}; // Select pins for servos
 
 #define MIX_TANK // Option to add a Tank / Arcade mix for two motors
 
