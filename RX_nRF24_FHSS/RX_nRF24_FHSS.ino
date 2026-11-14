@@ -1,15 +1,15 @@
 /*
-******************************************************************************************************
+*************************************************************************************************************
 RC receiver with FHSS
-******************************************************************************************************
+*************************************************************************************************************
 RC receiver from my repository https://github.com/stanekTM/RX_nRF24_FHSS
 
 Optimized for RC transmitters:
-DIY-Multiprotocol-TX-Module from my fork https://github.com/stanekTM/Custom_Protocol-Multiprotocol_TX
+DIY-Multiprotocol-TX-Module from my fork https://github.com/stanekTM/My_protocol_for_Multiprotocol-TX-Module
 OpenAVRc          https://github.com/Ingwie/OpenAVRc_Dev
 TX_nRF24_2ch_OLED https://github.com/stanekTM/TX_nRF24_FHSS_2ch_OLED
 TX_nRF24_Xch_LED  https://github.com/stanekTM/TX_nRF24_FHSS_Xch_LED
-******************************************************************************************************
+*************************************************************************************************************
 */
 
 #include <RF24.h>      // Ovladač bezdrátového čipu nRF24L01+ (v1.4.11 nebo novější)
