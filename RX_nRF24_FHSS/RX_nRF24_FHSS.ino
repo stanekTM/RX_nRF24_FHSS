@@ -33,7 +33,7 @@ uint8_t fhss_index = 0; // Ukazatel na aktuálně používaný RF kanál z tabul
 // Struktura přijímaných dat
 struct rx_packet
 {
-  uint8_t fail_safe_flag;
+  uint8_t fail_safe_flag = 0;
   uint16_t rc_data[num_rc_channels];
 }
 rx_data;
@@ -42,8 +42,8 @@ rx_data;
 struct tx_packet
 {
   uint8_t rssi = 0;
-  uint8_t batt_A1 = 0;
-  uint8_t batt_A2 = 0;
+  uint8_t batt_A1 = 255;
+  uint8_t batt_A2 = 255;
 }
 tx_telemetry_data;
 
