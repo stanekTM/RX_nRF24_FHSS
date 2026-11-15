@@ -71,7 +71,7 @@ void manage_rf_link()
     }
   }
   
-  // SCÉNÁŘ C: Aktivace Fail-Safe (uplynulo více než 1000 ms (1 vteřina) bez dat)
+  // SCÉNÁŘ C: Aktivace Fail-Safe (uplynulo více než 1000 ms bez dat)
   if (millis() - signal_loss_timeout > 1000)
   {
     set_fail_safe(); // Nastavit nouzové polohy z paměti EEPROM
@@ -80,12 +80,9 @@ void manage_rf_link()
     
     blink(PIN_LED, 100); // Krizový stav: LED bliká rychle (0.1 s)
   }
-  // Vybitá baterie A1 nebo A2: LED bliká (0.3 s)
-  else if (low_batt_flag_A1 || low_batt_flag_A2) blink(PIN_LED, 300);
-  // Ukládání Fail-Safe: LED bliká (0.5 s)
-  else if (rx_data.fail_safe_flag == 1) blink(PIN_LED, 500);
-  // Normální provoz: LED trvale svítí
-  else digitalWrite(PIN_LED, HIGH);
+  else if (low_batt_flag) blink(PIN_LED, 300); // Vybitá baterie A1 nebo A2: LED bliká (0.3 s)
+  else if (rx_data.fail_safe_flag == 1) blink(PIN_LED, 500); // Ukládání Fail-Safe: LED bliká (0.5 s)
+  else digitalWrite(PIN_LED, HIGH); // Normální provoz: LED trvale svítí
 }
 
 //*****************************
