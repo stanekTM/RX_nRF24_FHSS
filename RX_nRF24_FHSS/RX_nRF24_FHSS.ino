@@ -1,21 +1,21 @@
 /*
-*************************************************************************************************************
-RC receiver with FHSS
-*************************************************************************************************************
-RC receiver from my repository https://github.com/stanekTM/RX_nRF24_FHSS
+**************************************************************************************************************
+RC receiver with frequency hopping (FHSS) and telemetry (Auto-ACK Payload)
+**************************************************************************************************************
+Code from my repository: https://github.com/stanekTM/RX_nRF24_FHSS
 
 Optimized for RC transmitters:
-DIY-Multiprotocol-TX-Module from my fork https://github.com/stanekTM/My_protocol_for_Multiprotocol-TX-Module
-OpenAVRc          https://github.com/Ingwie/OpenAVRc_Dev
-TX_nRF24_2ch_OLED https://github.com/stanekTM/TX_nRF24_FHSS_2ch_OLED
-TX_nRF24_Xch_LED  https://github.com/stanekTM/TX_nRF24_FHSS_Xch_LED
-*************************************************************************************************************
+DIY-Multiprotocol-TX-Module from my fork: https://github.com/stanekTM/My_protocol_for_Multiprotocol-TX-Module
+OpenAVRc:          https://github.com/Ingwie/OpenAVRc_Dev
+TX_nRF24_2ch_OLED: https://github.com/stanekTM/TX_nRF24_FHSS_2ch_OLED
+TX_nRF24_Xch_LED:  https://github.com/stanekTM/TX_nRF24_FHSS_Xch_LED
+**************************************************************************************************************
 */
 
 #include <RF24.h>      // Ovladač bezdrátového čipu nRF24L01+ (v1.4.11 nebo novější)
 #include <DigitalIO.h> // Knihovna pro rychlé softwarové SPI a manipulaci s piny
-#include <Servo.h>     // Standardní Arduino knihovna pro generování RC pulzů
-#include <EEPROM.h>    // Standardní Arduino knihovna čtení a zápisu permanentní paměti EEPROM
+#include <Servo.h>     // Standardní knihovna Arduino
+#include <EEPROM.h>    // Standardní knihovna Arduino
 #include <avr/wdt.h>   // Knihovna pro ovládání Watchdog časovače
 #include "Config.h"
 #include "Pins.h"
@@ -141,4 +141,12 @@ void loop()
   
   // Měření napětí baterií
   read_batt();
+}
+
+//*****************************************************
+// Funkce pro blikání LED diody bez zpoždění procesoru
+//*****************************************************
+void blink(const uint8_t pin, uint32_t interval)
+{
+  digitalWrite(pin, (millis() / interval) % 2); // Zbytek po dělení časem (millis) určuje stav zapnuto/vypnuto
 }

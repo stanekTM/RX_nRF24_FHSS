@@ -56,10 +56,10 @@ void manage_rf_link()
     radio.startListening(); // Zapne příjem na novém FHSS kanálu čistě a bez parametrů
   }
   // SCÉNÁŘ B: Ztráta synchronizace (uplynulo více než 6 ms od posledního úspěšného paketu)
-  else if (micros() - sync_loss_timeout > SYNC_TIMEOUT)
+  else if (micros() - sync_loss_timeout >= SYNC_TIMEOUT)
   {
     // Rychlé nouzové asynchronní skenování RF kanálů každé 4.5 ms, aby se synchronizoval s krokem vysílače
-    if (micros() - emergency_timer > EMERGENCY_HOP)
+    if (micros() - emergency_timer >= EMERGENCY_HOP)
     {
       emergency_timer = micros(); // Reset časovače
       
@@ -72,7 +72,7 @@ void manage_rf_link()
   }
   
   // SCÉNÁŘ C: Aktivace Fail-Safe (uplynulo více než 1000 ms bez dat)
-  if (millis() - signal_loss_timeout > 1000)
+  if (millis() - signal_loss_timeout >= 1000)
   {
     set_fail_safe(); // Nastavit nouzové polohy z paměti EEPROM
     
@@ -103,12 +103,4 @@ void calculate_rssi_link()
     
     packet_counter = 0; // Vynulování počítadla úspěšně přijatých paketů
   }
-}
-
-//*****************************************************
-// Funkce pro blikání LED diody bez zpoždění procesoru
-//*****************************************************
-void blink(const uint8_t pin, uint32_t interval)
-{
-  digitalWrite(pin, (millis() / interval) % 2); // Zbytek po dělení časem (millis) určuje stav zapnuto/vypnuto
 }
