@@ -1,12 +1,12 @@
 # RC receiver for motors and servos
-RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payload), built on the Arduino platform.
+RC receiver with frequency hopping (FHSS) and telemetry (Auto-ACK Payload), built on the Arduino platform.
 
 ## Features and functions
 * **FHSS** Rapid hopping between 4 strong RF channels (12, 40, 76, 88) outside the main WiFi frequencies.
 * **Transmission rate** 1 Mbps (for full support of the newer nRF52 generation).
 * **Constant latency / period** 4.5 ms (222 Hz).
 * **Fail-Safe**
-  * Saving servo emergency positions to EEPROM memory (triggered from the transmitter).
+  * Writing servo emergency positions to EEPROM memory (triggered from the transmitter).
   * In the event of a signal loss exceeding 1000 ms, the receiver sets all servos to failsafe positions and the motors to a fixed neutral setting (1500 us, idling / brake).
 * **RC channels** from 2 to 14 with 16-bit pulse resolution (1000–2000 us).
   * Up to 14 PWM servo outputs (ATmega328PB only).
@@ -18,7 +18,7 @@ RC receiver with frequency hopping (FHSS) and two-way telemetry (Auto-ACK Payloa
   * Permanently lights: Normal operation, the signal is fine, and the batteries are charged.
   * Rapid flashing (100 ms): Fail-Safe activated (signal loss lasts longer than 1000 ms).
   * Medium flashing (300 ms): Low battery voltage A1 or A2.
-  * Slow flashing (500 ms): Saving emergency servo positions to EEPROM memory is in progress.
+  * Slow flashing (500 ms): Writing emergency servo positions to EEPROM memory is in progress.
 
 ## Supported hardware
 * Transceiver Nordic Semiconductor nRF24L01+.

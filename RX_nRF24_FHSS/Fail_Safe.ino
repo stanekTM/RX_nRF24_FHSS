@@ -48,15 +48,16 @@ void set_fail_safe()
 }
 
 //****************************************
-// Uložit nouzové polohy do paměti EEPROM
+// Zapsat nouzové polohy do paměti EEPROM
 //****************************************
-void save_fail_safe_to_eeprom()
+void write_fail_safe_to_eeprom()
 {
   #if defined(SERVO)
-    // Detekce příznaku Fail-Safe: Uloží aktuální hodnoty rc_data do paměti EEPROM pouze jednou
+    // Detekce příznaku Fail-Safe
     if (rx_data.fail_safe_flag == 1)
     {
-      if (!fail_safe_written_lock)
+      // Zapíše aktuální hodnoty rc_data do paměti EEPROM pouze jednou
+      if (!lock_repeated_writing)
       {
         for (uint8_t i = 0; i < NUM_SERVOS; i++)
         {
@@ -67,15 +68,15 @@ void save_fail_safe_to_eeprom()
         }
         
         // Zapsat do paměti EEPROM na adresu 10
-        EEPROM.put(EEPROM_ADDRESS, eeprom_fail_safe_data);
+        //EEPROM.put(EEPROM_ADDRESS, eeprom_fail_safe_data);
         
-        // Okamžitý reset hlídačů, aby rádio po 13ms spánku neztratilo FHSS krok
+        // Okamžitý reset hlídačů, aby rádio po 13 ms spánku neztratilo FHSS krok
         sync_loss_timeout = micros(); 
         signal_loss_timeout = millis();
         
-        fail_safe_written_lock = true; // Uzamknout proti opakovanému zápisu!
+        lock_repeated_writing = true; // Uzamknout proti opakovanému zápisu!
       }
     }
-    else fail_safe_written_lock = false; // Jakmile tlačítko pustíte, zámek se uvolní pro příští použití
+    else lock_repeated_writing = false; // Jakmile tlačítko pustíte, zámek se uvolní pro příští použití
   #endif
 }

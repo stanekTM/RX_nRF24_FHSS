@@ -20,14 +20,14 @@ TX_nRF24_Xch_LED:  https://github.com/stanekTM/TX_nRF24_FHSS_Xch_LED
 #include "Config.h"
 #include "Pins.h"
 
-RF24 radio(PIN_CE, PIN_CSN); // Inicializace rádiového čipu nRF24L01+
+// Inicializace rádiového čipu nRF24L01+
+RF24 radio(PIN_CE, PIN_CSN);
 
 // Unikátní RF adresa max. 5 bajtů (číslo nebo znak). Musí být stejná i ve vysílači
 const uint8_t rf_address[] = "jirka";
 
 // 4 silné RF kanály (mimo hlavní WiFi frekvence)
 const uint8_t rf_channels[] = {12, 40, 76, 88};
-
 uint8_t fhss_index = 0; // Ukazatel na aktuálně používaný RF kanál z tabulky
 
 // Struktura přijímaných dat
@@ -53,7 +53,8 @@ const uint32_t EMERGENCY_HOP = 4500; // Nouzové skenování každé 4.5 ms, aby
 uint32_t sync_loss_timeout = 0; // Časovač ztráty synchronizace
 uint32_t emergency_timer = 0;   // Časovač pro nouzové skenování kanálů
 
-uint32_t signal_loss_timeout = 0; // Hlídač totální ztráty signálu (Fail-Safe)
+// Hlídač totální ztráty signálu (Fail-Safe)
+uint32_t signal_loss_timeout = 0;
 
 // RSSI a kvalita spojení
 uint32_t rssi_timer = 0;    // Časovač měření RSSI
@@ -66,12 +67,11 @@ bool low_batt_flag = false; // Příznak vybité baterie A1 a A2
 // Permanentní paměť EEPROM
 uint16_t eeprom_fail_safe_data[NUM_SERVOS]; // Pole pro uložení / načtení nouzových poloh serv
 const int EEPROM_ADDRESS = 10; // Adresa v paměti EEPROM, kam se konfigurace ukládá
-
-bool fail_safe_written_lock = false; // Zámek chránící procesor před cyklickým přepisováním EEPROM
+bool lock_repeated_writing = false; // Zámek chránící procesor před cyklickým přepisováním EEPROM
 
 // Prototypy všech funkcí na začátku, aby je smyčka správně viděla
 void get_fail_safe_from_eeprom();
-void save_fail_safe_to_eeprom();
+void write_fail_safe_to_eeprom();
 void set_fail_safe();
 void motor_init();
 void motor_control();
@@ -136,8 +136,8 @@ void loop()
   // Měření kvality signálu RSSI
   calculate_rssi_link();
   
-  // Uložit nouzové polohy do paměti EEPROM
-  save_fail_safe_to_eeprom();
+  // Zapsat nouzové polohy do paměti EEPROM
+  write_fail_safe_to_eeprom();
   
   // Měření napětí baterií
   read_batt();
