@@ -68,7 +68,7 @@ void write_fail_safe_to_eeprom()
         }
         
         // Zapsat do paměti EEPROM na adresu 10
-        //EEPROM.put(EEPROM_ADDRESS, eeprom_fail_safe_data);
+        EEPROM.put(EEPROM_ADDRESS, eeprom_fail_safe_data);
         
         // Okamžitý reset hlídačů, aby rádio po 13 ms spánku neztratilo FHSS krok
         sync_loss_timeout = micros(); 
