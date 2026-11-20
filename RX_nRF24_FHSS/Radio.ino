@@ -36,7 +36,7 @@ void manage_rf_link()
     
     packet_counter++; // Započítáme úspěšný paket do RSSI
     
-    // Reset obou hlídačů ztráty signálu na aktuální čas
+    // Reset hlídačů ztráty synchronizace a signálu na aktuální čas
     sync_loss_timeout = micros(); 
     signal_loss_timeout = millis();
     
@@ -55,8 +55,8 @@ void manage_rf_link()
     
     radio.startListening(); // Zapne příjem na novém FHSS kanálu čistě a bez parametrů
   }
-  // SCÉNÁŘ B: Ztráta synchronizace (uplynulo více než 6 ms od posledního úspěšného paketu)
-  else if (micros() - sync_loss_timeout >= SYNC_TIMEOUT)
+  // SCÉNÁŘ B: Ztráta synchronizace (uplynulo více než 6 ms bez dat) spustí nouzové hledání
+  else if (micros() - sync_loss_timeout >= SYNC_LOSS)
   {
     // Rychlé nouzové asynchronní skenování RF kanálů každé 4.5 ms, aby se synchronizoval s krokem vysílače
     if (micros() - emergency_timer >= EMERGENCY_HOP)

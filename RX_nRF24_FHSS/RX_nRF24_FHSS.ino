@@ -49,11 +49,13 @@ struct tx_packet
 }
 tx_telemetry_data;
 
-// Hlídače ztráty synchronizace
-const uint32_t SYNC_TIMEOUT = 6000;  // 6 ms bez dat spustí nouzové hledání
-const uint32_t EMERGENCY_HOP = 4500; // Nouzové skenování každé 4.5 ms, aby se synchronizoval s krokem vysílače
-uint32_t sync_loss_timeout = 0; // Časovač ztráty synchronizace
-uint32_t emergency_timer = 0;   // Časovač pro nouzové skenování kanálů
+// Ztráta synchronizace (uplynulo více než 6 ms bez dat) spustí nouzové hledání
+const uint32_t SYNC_LOSS = 6000;
+uint32_t sync_loss_timeout = 0; // Hlídač ztráty synchronizace
+
+// Rychlé nouzové asynchronní skenování RF kanálů každé 4.5 ms, aby se synchronizoval s krokem vysílače
+const uint32_t EMERGENCY_HOP = 4500;
+uint32_t emergency_timer = 0; // Časovač nouzového skenování RF kanálů
 
 // Hlídač totální ztráty signálu (Fail-Safe)
 uint32_t signal_loss_timeout = 0;
