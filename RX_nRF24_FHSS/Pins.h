@@ -58,12 +58,12 @@ ADC7   -  A7
 
 // LED alarm (pokud není definován vlastní pin v profilu modelu)
 #ifndef PIN_LED
-  #define PIN_LED         A5
+  #define PIN_LED  A5
 #endif
 
 // Vstup 1 měřené baterie (pokud není definován vlastní pin v profilu modelu)
 #ifndef PIN_BATTERY_A1
-  #define PIN_BATTERY_A1    A6
+  #define PIN_BATTERY_A1  A6
 #endif
 
 // Vstup 2 měřené baterie (pokud je definována v profilu modelu)
@@ -74,12 +74,12 @@ ADC7   -  A7
 #endif
 
 // Pins for nRF24L01+
-#define PIN_CE       A0
-#define PIN_CSN      A1
+#define PIN_CE        A0
+#define PIN_CSN       A1
 
-// Software SPI (Provázáno s knihovnou DigitalIO.h a SOFTSPI v RF24_config.h) https://nrf24.github.io/RF24/md_docs_2arduino.html
-//          SCK      A2
-//          MOSI     A3
-//          MISO     A4
+// We use software SPI. Instructions https://nrf24.github.io/RF24/md_docs_2arduino.html#autotoc_md227
+// SOFT_SPI_SCK_PIN   A2
+// SOFT_SPI_MOSI_PIN  A3
+// SOFT_SPI_MISO_PIN  A4
 
 #endif // Konec __Pins_h__

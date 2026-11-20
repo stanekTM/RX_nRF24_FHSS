@@ -7,7 +7,7 @@ RC receiver with frequency hopping (FHSS) and telemetry (Auto-ACK Payload), buil
 * **Constant latency / period** 4.5 ms (222 Hz).
 * **Fail-Safe**
   * Writing servo emergency positions to EEPROM memory (triggered from the transmitter).
-  * In the event of a signal loss exceeding 1000 ms, the receiver sets all servos to failsafe positions and the motors to a fixed neutral setting (1500 us, idling / brake).
+  * In the event of a signal loss exceeding 400 ms, the receiver sets all servos to failsafe positions and the motors to a fixed neutral setting (1500 us, idling / brake).
 * **RC channels** from 2 to 14 with 16-bit pulse resolution (1000–2000 us).
   * Up to 14 PWM servo outputs (ATmega328PB only).
   * 2 separate motor outputs, combination of 1 to 2 motor outputs with servo outputs or separate servo outputs.
@@ -34,6 +34,14 @@ RC receiver with frequency hopping (FHSS) and telemetry (Auto-ACK Payload), buil
 * [**TX_nRF24_FHSS_Xch_LED**](https://github.com/stanekTM/TX_nRF24_FHSS_Xch_LED)
 
 ## Receiver configuration description
+We use software SPI. The instructions are [**here**](https://nrf24.github.io/RF24/md_docs_2arduino.html#autotoc_md227)
+```cpp
+#define SOFTSPI
+#define SOFT_SPI_SCK_PIN   A2
+#define SOFT_SPI_MOSI_PIN  A3
+#define SOFT_SPI_MISO_PIN  A4
+```
+
 Examples in the [**Config.h**](RX_nRF24_FHSS/Config.h) file
 ```cpp
 #define PIN_LED        2  // Define a pin other than A5

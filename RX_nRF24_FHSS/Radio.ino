@@ -71,8 +71,8 @@ void manage_rf_link()
     }
   }
   
-  // SCÉNÁŘ C: Aktivace Fail-Safe (uplynulo více než 1000 ms bez dat)
-  if (millis() - signal_loss_timeout >= 1000)
+  // SCÉNÁŘ C: Aktivace Fail-Safe (uplynulo více než 400 ms bez dat, pro rychlé zastavení motorů)
+  if (millis() - signal_loss_timeout >= 400)
   {
     set_fail_safe(); // Nastavit nouzové polohy z paměti EEPROM
     
