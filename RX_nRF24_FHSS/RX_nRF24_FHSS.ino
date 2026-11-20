@@ -58,11 +58,11 @@ uint32_t emergency_timer = 0;   // Časovač pro nouzové skenování kanálů
 // Hlídač totální ztráty signálu (Fail-Safe)
 uint32_t signal_loss_timeout = 0;
 
-// RSSI a kvalita spojení
+// Měření kvality signálu RSSI
 uint32_t rssi_timer = 0;    // Časovač měření RSSI
 uint8_t packet_counter = 0; // Počítadlo úspěšně přijatých paketů
 
-// Měření baterií
+// Měření napětí baterií
 uint32_t batt_timer = 0; // Časovač měření baterií
 bool low_batt_flag = false; // Příznak vybité baterie A1 a A2
 
