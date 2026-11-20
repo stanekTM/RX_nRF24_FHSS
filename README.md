@@ -16,7 +16,7 @@ RC receiver with frequency hopping (FHSS) and telemetry (Auto-ACK Payload), buil
   * RSSI counting successfully delivered packets with 8-bit resolution limited to (0–100).
 * **Status LED mode**
   * Permanently lights: Normal operation, the signal is fine, and the batteries are charged.
-  * Rapid flashing (100 ms): Fail-Safe activated (signal loss lasts longer than 1000 ms).
+  * Rapid flashing (100 ms): Fail-Safe activated (signal loss lasts longer than 400 ms).
   * Medium flashing (300 ms): Low battery voltage A1 or A2.
   * Slow flashing (500 ms): Writing emergency servo positions to EEPROM memory is in progress.
 
