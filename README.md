@@ -1,6 +1,5 @@
 # RC receiver for motors and servos
 RC receiver with frequency hopping (FHSS) and telemetry (Auto-ACK Payload), built on the Arduino platform.
-The hardware includes ATmega328P/PB microcontroller, nRF24L01+ transceiver, and optional motor driver.
 
 ## Features and functions
 * **FHSS** Rapid hopping between 4 strong RF channels (12, 40, 76, 88) outside the main WiFi frequencies.
